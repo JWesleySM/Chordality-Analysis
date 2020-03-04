@@ -18,12 +18,20 @@ cd <path-to-your-llvm>
 cd build
 make llc
 ```
+**_Important_**: 
+This code was developed using the version 8.0.0 of LLVM. In newer versions of LLVM, the method **index2VirtReg (unsigned Index)** no longer belongs to the class **TargetRegisterInfo**, now existing in the **Register** class. If you have some compilation error due that, change the lines 266 and 289 on **RegAllocBasic.cpp** file. 
+
+```
+TargetRegisterInfo::index2VirtReg(i) -> Register::index2VirtReg(i)
+```
+
 To use it on a program, first compile the source code (.c file) with Clang, and call the static compiler llc on the bytecode. For example:
 
 ```
 clang -emit-llvm program.c -c -o program.bc
 llc -regalloc=basic program.bc -o program.s
 ```
+
 It is worth remembering that this code handle a LLVM Machine Function. Then the output contains the name of the virtual register, not the variables in the source code. After running llc, you will see an output like this:
 ```
 Interference Graph:
@@ -52,6 +60,6 @@ Number of Edges: 27
 
 *vertex-> its neighbours*
 
-If for any reason you don't want some of the output information, comment the corresponding lines 307 to 309 at the **RegAllocBasic.cpp** file.
+If for any reason you don't want some of the output information, comment the corresponding lines 307 to 309 on **RegAllocBasic.cpp** file.
 
 This implementation is part of the [Angha Project](http://cuda.dcc.ufmg.br/angha/home). By following this link, you can find a very nice analysis on chordal graphs in the tab "Analyses". 
