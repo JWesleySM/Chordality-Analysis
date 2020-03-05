@@ -32,7 +32,7 @@ clang -emit-llvm program.c -c -o program.bc
 llc -regalloc=basic program.bc -o program.s
 ```
 
-It is worth remembering that this code handle a LLVM Machine Function. Then the output contains the name of the virtual register, not the variables in the source code. After running llc, you will see an output like this:
+It is worth remembering that this code handle a LLVM Machine Function. Then the output contains the name of the virtual register, not the variables in the source code. After running llc on the example program (**example.c**) provided, you will see an output like this:
 ```
 Interference Graph:
 %26-> 
