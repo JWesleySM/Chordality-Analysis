@@ -11,7 +11,7 @@ isSEO() -> check if a sequence is indeed a simplicial elimination ordering.
 getInterGraphSize() -> get the number of vertices and edges in a graph.
 ```
 
-In order to use it, [download and build](http://releases.llvm.org) on your system. Then replace the file located at <your-path-to-llvm/llvm/lib/CodeGen/RegAllocBasic.cpp for this one and recompile the [LLVM static compiler](https://llvm.org/docs/CommandGuide/llc.html).
+In order to use it, [download](http://releases.llvm.org) and [build](http://releases.llvm.org/8.0.0/docs/GettingStarted.html) LLVM on your system. Then replace the file located at <your-path-to-llvm/llvm/lib/CodeGen/RegAllocBasic.cpp for this one and recompile the [LLVM static compiler](https://llvm.org/docs/CommandGuide/llc.html).
 
 ```
 cd <path-to-your-llvm>
