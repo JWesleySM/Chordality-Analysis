@@ -62,4 +62,4 @@ Number of Edges: 27
 
 If for any reason you don't want some of the output information, comment the corresponding lines 307 to 309 on **RegAllocBasic.cpp** file.
 
-This implementation is part of the [Angha Project](http://cuda.dcc.ufmg.br/angha/home). By following this link, you can find a very nice analysis on chordal graphs in the tab "Analyses". 
+This implementation is part of the [Angha Project](http://cuda.dcc.ufmg.br/angha/home). By following this link, you can find a very nice analysis on chordal graphs in the tab "Case Studies". 
